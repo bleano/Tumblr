@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		59132FDBF470C6F7B118F4F4 /* libPods-Tumblr.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B62207BFB9FD4930EBFF51F /* libPods-Tumblr.a */; };
 		ED1841491E39257900295866 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = ED1841481E39257900295866 /* Post.m */; };
+		ED18414E1E392F9B00295866 /* PostTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED18414D1E392F9B00295866 /* PostTableViewCell.m */; };
 		ED83C79B1E39219800AE245A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ED83C79A1E39219800AE245A /* main.m */; };
 		ED83C79E1E39219800AE245A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ED83C79D1E39219800AE245A /* AppDelegate.m */; };
 		ED83C7A11E39219800AE245A /* PhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED83C7A01E39219800AE245A /* PhotosViewController.m */; };
@@ -23,6 +24,8 @@
 		C1E5E1C013B2CEE5AD444608 /* Pods-Tumblr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tumblr.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tumblr/Pods-Tumblr.release.xcconfig"; sourceTree = "<group>"; };
 		ED1841471E39257900295866 /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
 		ED1841481E39257900295866 /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
+		ED18414C1E392F9B00295866 /* PostTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostTableViewCell.h; sourceTree = "<group>"; };
+		ED18414D1E392F9B00295866 /* PostTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostTableViewCell.m; sourceTree = "<group>"; };
 		ED83C7961E39219800AE245A /* Tumblr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tumblr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED83C79A1E39219800AE245A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		ED83C79C1E39219800AE245A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -82,6 +85,15 @@
 			name = Controllers;
 			sourceTree = "<group>";
 		};
+		ED18414B1E392F7A00295866 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ED18414C1E392F9B00295866 /* PostTableViewCell.h */,
+				ED18414D1E392F9B00295866 /* PostTableViewCell.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		ED83C78D1E39219800AE245A = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +115,7 @@
 		ED83C7981E39219800AE245A /* Tumblr */ = {
 			isa = PBXGroup;
 			children = (
+				ED18414B1E392F7A00295866 /* View */,
 				ED18414A1E39259B00295866 /* Controllers */,
 				ED1841461E39254A00295866 /* Model */,
 				ED83C79C1E39219800AE245A /* AppDelegate.h */,
@@ -250,6 +263,7 @@
 				ED83C79E1E39219800AE245A /* AppDelegate.m in Sources */,
 				ED83C79B1E39219800AE245A /* main.m in Sources */,
 				ED1841491E39257900295866 /* Post.m in Sources */,
+				ED18414E1E392F9B00295866 /* PostTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

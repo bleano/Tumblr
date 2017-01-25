@@ -8,8 +8,11 @@
 
 #import "PhotosViewController.h"
 #import "Post.h"
-@interface PhotosViewController ()
+#import "PostTableViewCell.h"
+#import <AFNetworking/UIImageView+AFNetworking.h>
+@interface PhotosViewController () <UITableViewDataSource>
 @property (nonatomic,strong) NSArray<Post *> *posts;
+@property (weak, nonatomic) IBOutlet UITableView *photosTableView;
 
 @end
 
@@ -17,6 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.photosTableView.dataSource = self;
     [self fetchFeed];
 }
 
@@ -59,11 +63,26 @@
                                                         [feedPosts addObject: singlePost];
                                                     }
                                                     self.posts = feedPosts;
+                                                    [self.photosTableView reloadData];
                                                 } else {
                                                     NSLog(@"An error occurred: %@", error.description);
                                                 }
                                             }];
     [task resume];
+}
+
+- (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath{
+    Post *post = [self.posts objectAtIndex:indexPath.row];
+    PostTableViewCell *postTableViewCell = [tableView dequeueReusableCellWithIdentifier:@"postTableViewCell" forIndexPath:indexPath];
+    postTableViewCell.blogName.text = post.blogName;
+    postTableViewCell.summary.text = post.summary;
+    [postTableViewCell.originalPhoto setImageWithURL: post.imageUrl];
+    //    NSLog(@"row number:@%ld", indexPath.row);
+    return postTableViewCell;
+    
+}
+- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger) section {
+    return self.posts.count;
 }
 
 
